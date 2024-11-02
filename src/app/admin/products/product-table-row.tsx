@@ -86,7 +86,7 @@ export const ProductTableRow = ({
         <Button
           variant="ghost"
           size="icon"
-          onClick={() =>
+          onClick={() => {
             setCurrentProduct({
               title: product.title,
               category: product.category.id.toString(),
@@ -95,13 +95,11 @@ export const ProductTableRow = ({
               images: [],
               slug: product.slug,
               intent: "update",
-            })
-          }
+            });
+            setIsDeleteModalOpen(true);
+          }}
         >
-          <Trash2
-            className="h-4 w-4"
-            onClick={() => setIsDeleteModalOpen(true)}
-          />
+          <Trash2 className="h-4 w-4" />
         </Button>
       </TableCell>
     </TableRow>

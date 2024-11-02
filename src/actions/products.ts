@@ -11,7 +11,7 @@ import{
 import { CreateProductSchemaServer, createProductSchemaServer } from "@/app/admin/products/schema";
 
 
-export const getProductWithCategories = 
+export const getProductsWithCategories = 
     async (): Promise<ProductsWithCategoriesResponse> => {
         const supabase = await createClient();
 
@@ -40,7 +40,6 @@ export const createProduct = async ({
 } : CreateProductSchemaServer) => {
 
     const supabase = await createClient();
-
 
     const slug = slugify(title, { lower: true });
 
